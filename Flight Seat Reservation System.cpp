@@ -16,7 +16,7 @@ void initializeSeats()
 
 void displaySeats()
 {
-    cout << "\nSeating Chart:\n";
+    cout << "Seating Chart:\n";
     for (int i = 0; i < 6; i++) 
     {
         cout << "Row " << i + 1 << ": ";
@@ -77,26 +77,50 @@ int countAvailableSeats()
 }
 
 
-int MaxEmptySeats() 
+void MaxEmptySeats()
 {
     int maxEmpty = -1;
-    int rowIndex = -1;
+
+ 
     for (int i = 0; i < 6; i++)
     {
         int emptyCount = 0;
-        for (int j = 0; j < 4; j++) 
+        for (int j = 0; j < 4; j++)
         {
             if (seats[i][j] == 'E')
                 emptyCount++;
         }
-        if (emptyCount > maxEmpty) 
-        {
+
+        if (emptyCount > maxEmpty)
             maxEmpty = emptyCount;
-            rowIndex = i;
+    }
+
+  
+    if (maxEmpty == 0)
+    {
+        cout << "No empty seats remaining!" << endl;
+        return ;
+    }
+
+    
+    cout << "Rows with the most empty seats (" << maxEmpty << " empty seats): ";
+    for (int i = 0; i < 6; i++)
+    {
+        int emptyCount = 0;
+        for (int j = 0; j < 4; j++)
+        {
+            if (seats[i][j] == 'E')
+                emptyCount++;
+        }
+
+        if (emptyCount == maxEmpty)
+        {
+            cout << (i + 1) << " ";
         }
     }
-    return rowIndex + 1;
+    cout << endl;
 }
+
 
 int main() 
 {
@@ -107,16 +131,17 @@ int main()
     {
         displaySeats();
         cout << "\nAvailable Seats: " << countAvailableSeats() << endl;
-        cout << "Row with max empty seats: Row " << MaxEmptySeats() << endl;
-
+        MaxEmptySeats();
         bookSeat();
 
         cout << "\nDo you want to book another seat? (y/n): ";
         cin >> choice;
-    } while (choice == 'y' || choice == 'Y');
+    }
+    while (choice == 'y' || choice == 'Y');
 
     cout << "\nFinal Seating Chart:\n";
     displaySeats();
+   
     cout << "Total Available Seats: " << countAvailableSeats() << endl;
 
     return 0;
