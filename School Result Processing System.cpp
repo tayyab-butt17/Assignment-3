@@ -6,14 +6,15 @@ void input()
 {
 
 	for (i = 0; i < 10; i++)
+{
+	cout << "Enter Marks of Roll no. " << i + 1 << endl;
+	for (j = 0; j < 5; j++)
 	{
-		for (j = 0; j < 5; j++)
-		{
-			cout << "Enter Marks of Roll no. " << i + 1 << " in subject " << j + 1 << " ";
-			cin >> marks[i][j];
-		}
-		cout << "______________________________" << endl;
+		cout << "Subject " << j + 1 << " :";
+		cin >> marks[i][j];
 	}
+}
+
 
 }
 void topper()
