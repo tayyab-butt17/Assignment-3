@@ -9,11 +9,13 @@ void input()
 	for (i = 0; i < 5; i++)//loc
 	{
 		int sum = 0;
-		for (j = 0; j < 5; j++)//temp
-		{
-			temp[i][j] = 30 + rand() % 10;
-			sum += temp[i][j];
-		}
+cout << "Enter Temperature of Zone "<<i+1 << endl;
+for (j = 0; j < 5; j++)//temp
+{
+	cout << "Slot " << j + 1 << " : ";
+	cin>>temp[i][j];
+	sum += temp[i][j];
+}
 		average[i] = sum / 5.0;
 	}
 
