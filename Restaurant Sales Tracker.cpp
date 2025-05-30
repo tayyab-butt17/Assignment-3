@@ -5,13 +5,14 @@ int i, j;
 void input()
 {
 	for (i = 0; i < 7; i++)
+{
+	cout << "Enter data of Day " << i + 1 << endl;
+	for (j = 0; j < 4; j++)
 	{
-		for (j = 0; j < 4; j++)
-		{
-			cout << "Enter data of Day " << i + 1 << " of Item " << j + 1 << " ";
-			cin >> sales[i][j];
-		}
+	cout<< "Item " << j + 1 << " ";
+		cin >> sales[i][j];
 	}
+}
 
 }
 void totalsalesperitem()
