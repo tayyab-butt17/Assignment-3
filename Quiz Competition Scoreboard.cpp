@@ -10,12 +10,13 @@ void input()
 	for (i = 0; i < 6; i++)
 	{
 		total[i] = 0;
-		for (j = 0; j < 4; j++)
-		{
-			cout << "Enter Team " << i+1 << " Score of Competition " << j+1 << " \n";
-			cin >> teamscore[i][j];
-			total[i] += teamscore[i][j];
-		}
+cout << "Enter Team " << i + 1 << endl;
+for (j = 0; j < 4; j++)
+{
+	cout<< "Score of Competition " << j+1 << " : ";
+	cin >> teamscore[i][j];
+	total[i] += teamscore[i][j];
+}
 	}
 }
 
