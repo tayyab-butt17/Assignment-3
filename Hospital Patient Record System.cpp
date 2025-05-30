@@ -8,11 +8,12 @@ void input()
 	int criticaldays[5] = { 0 };
 	for (p = 0; p < 5; p++)
 	{
-		for (d = 0; d < 7; d++)
-		{
-			
-			cout << "Enter Patient " << p + 1 << " Condition on day "<< d + 1<<" [ S=Stable, C=Critical, and R=Recovered ] : " ;
-			cin >> record[p][d];
+	cout << "Enter Patient " << p + 1 << " Condition[S = Stable, C = Critical, and R = Recovered] " << endl;
+for (d = 0; d < 7; d++)
+{
+	rewrite:
+	 cout<<"Day "<< d + 1<<" " ;
+	cin >> record[p][d];
 			if (record[p][d] == 'S' || record[p][d] == 's')
 			{
 				s++;
